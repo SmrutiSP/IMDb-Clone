@@ -17,3 +17,7 @@ There are 3 pages to this website:
   
 - Movie Page:- 
   Here you can view more information about the movie on whose name you clicked.
+ 
+# NOTE:
+- When you save the movies as favourites then the information is stored in local storage of browser.
+- Debouncing is used to limit API calls with each key stroke when inputting title of the movie in search bar on Home Page
