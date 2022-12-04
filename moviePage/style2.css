@@ -1,0 +1,60 @@
+#main-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    font-family: consolas,sans-serif,serif;
+    color: white;
+    overflow: auto;
+}
+
+#main-container a {
+    text-decoration-line: none;
+}
+
+#main-container a:hover {
+    text-decoration-line: underline;
+}
+
+#main-container .movie-poster {
+    text-align: center;
+    margin-top: 25px;
+}
+
+#main-container .movie-poster img {
+    width: 50%;
+}
+
+#main-container .movie-title {
+    margin-top: 25px;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+
+#main-container .movie-plot {
+    margin-top: 25px;
+    text-align: justify;
+}
+
+#main-container .movie-genre, #main-container .movie-release-date {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+#main-container .movie-genre>div, #main-container .movie-release-date>div {
+    text-decoration-line: underline ;
+}
+
+@media(max-width:711px) {
+    #main-container {
+        font-size: 1rem;
+    }
+}
