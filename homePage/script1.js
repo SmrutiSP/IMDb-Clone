@@ -1,3 +1,6 @@
+// variable used to store setTimeOut index used in process of debouncing 
+let setTimeOutIndex;
+
 // fetch necessary UI elements
 const searchInput = document.querySelector("#search-bar-container .search-box input");
 const searchResultsBox = document.querySelector("#search-bar-container .search-results");
@@ -6,15 +9,18 @@ searchInput.addEventListener('input',fetchMovieInfo);
 
 // fetch movie information
 function fetchMovieInfo(e) {
-    fetch('https://www.omdbapi.com/?apikey=b523fdba&s='+e.target.value)
-    .then(res=>res.json())
-    .then((data)=>{
-        if(data.Response !== 'False') {
-            addToSeachResultsBox(data.Search);
-        } else {
-            clearSearchResultsBox();
-        }
-    });
+    clearTimeout(setTimeOutIndex);
+    setTimeOutIndex = setTimeout(()=>{
+        fetch('https://www.omdbapi.com/?apikey=b523fdba&s='+e.target.value)
+        .then(res=>res.json())
+        .then((data)=>{
+            if(data.Response !== 'False') {
+                addToSeachResultsBox(data.Search);
+            } else {
+                clearSearchResultsBox();
+            }
+        });
+    },500);
 }
 
 // clear child nodes of search results box
