@@ -38,7 +38,7 @@
 }
 
 #main-container .favList div input {
-    width: 20px;
+    min-width: 20px;
 }
 
 #main-container .favList div:hover {
